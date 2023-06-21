@@ -1,0 +1,283 @@
+package com.tests.SeleniumProject;
+
+import java.util.concurrent.TimeUnit;
+
+import org.openqa.selenium.By;
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.WebElement;
+import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.edge.EdgeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+
+
+import io.github.bonigarcia.wdm.WebDriverManager;
+//Testcase1
+public class TestScripts37<windowHandles> {
+
+	public static void main(String[] args) throws InterruptedException{
+		WebDriverManager.chromedriver().setup();
+
+        WebDriver driver = new ChromeDriver();
+
+        String url = "https://login.salesforce.com/";
+ 
+        driver.get(url);
+        driver.manage().window().maximize();
+        driver.manage().timeouts().pageLoadTimeout(10, TimeUnit.SECONDS);
+ 
+ 
+        WebElement login = driver.findElement(By.linkText("Login"));
+        System.out.println("Clicking on the login element in the main page");
+        login.click();
+ 
+        driver.manage().timeouts().pageLoadTimeout(10,TimeUnit.SECONDS);
+ 
+        WebElement email = driver.findElement(By.id("email"));
+        WebElement password = driver.findElement(By.id("password"));
+        WebElement loginButton = driver.findElement(By.id("login-button"));
+ 
+        email.clear();
+        System.out.println("Entering the email");
+        email.sendKeys("your_email");
+        password.clear();
+        System.out.println("entering the password");
+        password.sendKeys("your_password");
+ 
+        System.out.println("Clicking login button");
+        loginButton.click();
+ 
+       
+        System.out.println("User logged in successfully");
+ 
+      //  driver.quit();
+        
+	}  
+}   
+        
+  
+
+//Using Select class for selecting value from dropdown 
+
+  // System Property for Chrome Driver   
+        System.setProperty("webdriver.chrome.driver","D:\\ChromeDriver\\chromedriver.exe");  
+  
+        // Instantiate a ChromeDriver class.      
+        WebDriver driver=new ChromeDriver();  
+  
+        // Launch Website  
+        driver.navigate().to("\"https://login.salesforce.com/\"");   
+  
+  
+       //Using Select class for selecting value from dropdown  
+      
+       Select dropdown = new Select(driver.findElement(By.id("testingDropdown")));  
+       dropdown.selectByVisibleText("username");  
+  
+       // Close the Browser  
+        driver.close(); 
+        
+ // testcase6
+  
+  // click on edit profile button on contact info  
+        driver = new Chromedriver();
+		
+		driver.manage().window().maximize();
+		driver.get("\"https://login.salesforce.com/\"");
+		driver.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
+
+		WebElement firstName = driver.findElement(By.xpath("//*[@id='firstname']")); 
+		WebElement lastName = driver.findElement(By.xpath("//*[@id='lastname']")); 
+		firstName.sendKeys("Janani");
+		lastName.sendKeys("Masilamani");
+		 
+	//Locate the post link by its XPath or any other suitable method
+		WebElement postLink = driver.findElement(By.xpath("//a[contains(text(),'Post')]"));
+
+      //Click the post link
+      postLink.click();
+
+     // Click the file link
+       fileLink.click();
+       
+    // Click the "Add Photo" link
+       addPhotoLink.click();
+       }
+       }
+// testcase7
+     
+    	        // Set the path to the chromedriver or geckodriver executable
+    	        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver.exe");
+    	        //System.setProperty("webdriver.gecko.driver", "path/to/geckodriver.exe");
+
+    	        // Create a new instance of the WebDriver
+    	        WebDriver driver = new ChromeDriver();
+    	        // WebDriver driver = new FirefoxDriver();
+
+    	        // Open the Salesforce login page
+    	        driver.get("https://login.salesforce.com/");
+
+    	     // Locate the user menu drop-down by its XPath or any other suitable method
+    	        WebElement userMenuDropdown = driver.findElement(By.xpath("//span[@class='uiImage--medium uiImage']"));
+
+    	        // Click the user menu drop-down
+    	        userMenuDropdown.click();
+    	        // Locate the option within the user menu drop-down by its XPath or any other suitable method
+    	        WebElement userOption = driver.findElement(By.xpath("//a[contains(text(), 'User Option')]"));
+
+    	        // Click the user option within the user menu drop-down
+    	        userOption.click();
+    	     // Locate the "My Settings" option within the user menu drop-down by its link text or any other suitable method
+    	        WebElement mySettingsOption = driver.findElement(By.linkText("My Settings"));
+
+    	        // Click the "My Settings" option
+    	        mySettingsOption.click();
+    	     // Locate the "Personal" link by its XPath or any other suitable method
+    	        WebElement personalLink = driver.findElement(By.xpath("//a[contains(text(),'Personal')]"));
+
+    	        // Click the "Personal" link
+    	        personalLink.click();
+    	     // Locate the "Login History" link by its link text or any other suitable method
+    	        WebElement loginHistoryLink = driver.findElement(By.linkText("Login History"));
+
+    	        // Click the "Login History" link
+    	        loginHistoryLink.click();
+    	     // Locate the "Display & Layout" link by its link text or any other suitable method
+    	        WebElement displayAndLayoutLink = driver.findElement(By.linkText("Display & Layout"));
+
+    	        // Click the "Display & Layout" link
+    	        displayAndLayoutLink.click();
+    	        
+    	     // Locate the Email Name field and enter the desired email name
+    	        WebElement emailNameField = driver.findElement(By.id("email_name_field_id"));
+    	        emailNameField.sendKeys("Email Name");
+
+    	        // Locate the Email Address field and enter the desired email address
+    	        WebElement emailAddressField = driver.findElement(By.id("email_address_field_id"));
+    	        emailAddressField.sendKeys("Email Address");
+
+    	        // Locate the automatic BCC radio button and select it
+    	        WebElement automaticBccRadioButton = driver.findElement(By.id("automatic_bcc_radio_button_id"));
+    	        automaticBccRadioButton.click();
+
+    	        // Locate the Save button and click it
+    	        WebElement saveButton = driver.findElement(By.id("save_button_id"));
+    	        saveButton.click();
+    	        
+    	     // Locate the "Calendar & Remainders" link by its link text or any other suitable method
+    	        WebElement calendarAndRemindersLink = driver.findElement(By.linkText("Calendar & Reminders"));
+
+    	        // Click the "Calendar & Remainders" link
+    	        calendarAndRemindersLink.click();
+    	        
+    	     // Locate the "Activity Reminders" link by its link text or any other suitable method
+    	        WebElement activityRemindersLink = driver.findElement(By.linkText("Activity Reminders"));
+
+    	        // Click the "Activity Reminders" link
+    	        activityRemindersLink.click();
+    	        
+    	     // Locate the "Open a test Reminder" button by its ID or any other suitable method
+    	        WebElement openTestReminderButton = driver.findElement(By.id("open_test_reminder_button_id"));
+
+    	        // Click the "Open a test Reminder" button
+    	        openTestReminderButton.click();
+    	    }
+    	    }  
+    	//testcase 8
+    	    
+    	// Set the path to the chromedriver or geckodriver executable
+        System.setProperty("webdriver.chrome.driver", "path/to/chromedriver.exe");
+        //System.setProperty("webdriver.gecko.driver", "path/to/geckodriver.exe");
+
+        // Create a new instance of the WebDriver
+        WebDriver driver = new ChromeDriver();
+        // WebDriver driver = new FirefoxDriver();
+
+        // Open the Salesforce login page
+        driver.get("https://login.salesforce.com/");
+        
+     // Locate the user menu drop-down by its XPath or any other suitable method
+        WebElement userMenuDropdown = driver.findElement(By.xpath("//div[@class='userNav-arrow']"));
+
+        // Click on the user menu drop-down
+        userMenuDropdown.click();
+        
+     // Locate the "Developer Console" link by its link text or any other suitable method
+        WebElement developerConsoleLink = driver.findElement(By.linkText("Developer Console"));
+
+        // Click the "Developer Console" link
+        developerConsoleLink.click();
+        
+     // Open the Developer Console by using the keyboard shortcut
+        driver.findElement(By.tagName("body")).sendKeys(Keys.F12);
+        
+     // Get the window handles
+        Set<String> windowHandles = driver.getWindowHandles();
+
+        // Switch to the last opened window (Developer Console)
+        String developerConsoleWindowHandle = windowHandles.toArray()[windowHandles.size() - 1].toString();
+        driver.switchTo().window(developerConsoleWindowHandle);
+
+     // Locate the "Close" button by its XPath or any other suitable method
+        WebElement closeButton = driver.findElement(By.xpath("//button[@title='Close']"));
+
+        // Click the "Close" button
+        closeButton.click();
+        
+     // Switch to the main Salesforce window
+        String salesforceWindowHandle = windowHandles.toArray()[0].toString();
+        driver.switchTo().window(salesforceWindowHandle);
+        
+        }
+            }
+        
+  // testcase9
+        
+     // Locate the "Logout" option by its link text or any other suitable method
+        WebElement logoutOption = driver.findElement(By.linkText("Logout"));
+
+        // Click on the "Logout" option
+        logoutOption.click();
+        
+        }
+        }
+        
+  //testcase10 createaccount
+     
+     // Locate the "Accounts" link by its link text or any other suitable method
+        WebElement accountsLink = driver.findElement(By.linkText("Accounts"));
+
+        // Click the "Accounts" link
+        accountsLink.click();
+        
+     // Locate the Account Name input field
+        WebElement accountNameField = driver.findElement(By.id("acc2"));
+
+        // Locate the Type dropdown field
+        WebElement typeDropdown = driver.findElement(By.id("acc6"));
+
+        // Locate the Customer Priority dropdown field
+        
+        WebElement customerPriorityDropdown = driver.findElement(By.id("00Nxx000000xxxx"));
+     // Enter the Account Name
+        
+     // Click on the Type dropdown to open the options
+        typeDropdown.click();
+
+        // Locate the "Technology Partner" option by its XPath or any other suitable method
+        WebElement technologyPartnerOption = driver.findElement(By.xpath("//option[text()='Technology Partner']"));
+
+        // Click the "Technology Partner" option
+        technologyPartnerOption.click();
+        accountNameField.sendKeys("Account Name");
+        
+        // Click on the Customer Priority dropdown to open the options
+        customerPriorityDropdown.click();
+
+        // Locate the "High" option by its value attribute or any other suitable method
+        WebElement highOption = driver.findElement(By.cssSelector("option[value='High']"));
+
+        // Click the "High" option
+        highOption.click();
+        
+        }
+        }
